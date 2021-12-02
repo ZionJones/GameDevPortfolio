@@ -1,0 +1,17 @@
+<?php
+
+	$servername='localhost';
+    $email='';
+    $name='root';
+	$dbname = "gamedevportfolio";
+    $conn=mysqli_connect($servername,$name,$email,"$dbname");
+      if(!$conn){
+          die('Could not Connect MySql Server:' .mysql_error());
+        }
+
+
+
+
+
+
+?>

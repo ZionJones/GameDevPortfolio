@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+    <form action="submit.php" method="post">
+        Full Name:<br>
+        <input type="text" name="name">
+        <br>
+        Email Address:<br>
+        <input type="text" name="email">
+        <br><br>
+        <input type="submit" value="Submit">
+
+        <ul class="actions special">
+            <li>
+                <a href="Index.html" class="button">HOME</a>
+            </li>
+
+        </ul>
+
+    </form>
+
+
+</body>
+</html>
+
+<?php
+mysql_connect("localhost","root","") or die (mysql_error());
+mysql_select_db("req") or die (mysql_error());
+
+if(isset($_POST['signup']))
+{
+    echo $name= $_POST['name'];
+    echo $emailid= $_POST['email'];
+
+    $query = "insert into client (name,email) values ('$name','$email')";
+    if(mysql_query($query))
+    {
+        echo "<h3>Thanks For Considering Me I'll Get Back To You As Soon As I can!!</h3>"
+
+    }
+
+
+
+
+}
+?>
+
